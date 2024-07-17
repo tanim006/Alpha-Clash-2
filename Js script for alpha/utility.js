@@ -30,7 +30,7 @@ function SetBackGroundColor(ElementId){
 }
 function RemoveBackGroundColor(ElementId){
     const Elements = document.getElementById(ElementId)
-    Elements.classList.remove('bg-orange-400')
+    Elements.classList.remove('bg-orange-400');
 
 }
 
@@ -41,10 +41,19 @@ function SetTextElementById (ElementId,value){
 function GetValueByElementsId (ElementId){
     const element = document.getElementById(ElementId)
     const value = element.innerText
-    return value
+    return value;
 }
 function GetTextVByElementsId (elemetsid){
     const texts = document.getElementById(elemetsid)
     const Text = texts.innerText
-    return Text
+    return Text;
+}
+
+function doAnimation (ElementId){
+    const element = document.getElementById(ElementId)
+    element.classList.add('animate-bounce')
+}
+function removeAnimation (ElementId){
+    const element = document.getElementById(ElementId)
+    element.classList.remove('animate-bounce')
 }

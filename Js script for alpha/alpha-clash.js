@@ -1,15 +1,4 @@
-// function play(){
-//     // Remove the hidden word from the class list : Step - 1
-//     const HomeScreen = document.getElementById('Home-Screen')
-//     HomeScreen.classList.add('hidden')
-//     // Add the hidden word in the class list : Step-2
-//     const GameScreen = document.getElementById('Game-Screen')
-//     GameScreen.classList.remove('hidden')
-// }
 
-
-
-// We can do this with another way like recursion 
 
 function play(){
     RemoveElements('Score-Screen')
@@ -26,13 +15,13 @@ function ContinueGame(){
     // set the current alphabet in the ux file or show the the current alphabet while it's changing with randomly
     const currentAlphabet = document.getElementById('Current-Alphabet')
     currentAlphabet.innerText = alphabet
-
+    doAnimation(alphabet)
     SetBackGroundColor(alphabet)
 }
 //  check either the player pressed and the showed alphabet is same or not 
 
 function KeyboardEvent(event){
-    // check ehat player has pressed
+    // check what player has pressed
     const PlayerPressed =event.key
     if(PlayerPressed=== 'Escape'){
         GameOver()
@@ -59,6 +48,7 @@ function KeyboardEvent(event){
 
 
         RemoveBackGroundColor(ChangedCurrentAlphabet)
+        removeAnimation(ChangedCurrentAlphabet)
         ContinueGame()
 
     }
@@ -95,7 +85,7 @@ function GameOver(){
 
     const removeHighlight = GetTextVByElementsId('Current-Alphabet')
     RemoveBackGroundColor(removeHighlight)
-    
+    removeAnimation(removeHighlight)
 }
 
 
